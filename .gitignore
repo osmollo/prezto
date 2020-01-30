@@ -2,3 +2,9 @@
 *.zwc.old
 modules/*/cache.zsh
 contrib
+
+runcoms/zshrc
+runcoms/zprestorc
+runcoms/zshenv
+
+modules/prompt/functions/prompt_sorin_setup

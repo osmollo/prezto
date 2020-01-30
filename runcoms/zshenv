@@ -9,3 +9,12 @@
 if [[ ( "$SHLVL" -eq 1 && ! -o LOGIN ) && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprofile"
 fi
+
+export ANSIBLE_VAULT_PASSWORD_FILE=~/.vault_pass.txt
+export WORKON_HOME=$HOME/python-venv
+
+if [ $(grep -i ubuntu /etc/os-release | wc -l) -ge 1 ]; then
+  source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
+elif [ $(grep -i fedora /etc/os-release | wc -l) -ge 1 ]; then
+  source /usr/bin/virtualenvwrapper.sh
+fi
