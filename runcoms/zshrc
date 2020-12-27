@@ -20,6 +20,7 @@ fi
 # Customize to your needs...
 source $HOME/.bash_aliases
 export XEUSER=XE67334
+export GITSTATUS_LOG_LEVEL=DEBUG
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
