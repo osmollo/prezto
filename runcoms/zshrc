@@ -24,7 +24,7 @@ export GITSTATUS_LOG_LEVEL=DEBUG
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:/usr/local/go/bin:/usr/local/java/jdk-11.0.11+9/bin
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /home/ohermosa/vault vault
@@ -33,3 +33,5 @@ if type rg &> /dev/null; then
   export FZF_DEFAULT_COMMAND='rg --files'
   export FZF_DEFAULT_OPTS='-m --height 50% --border'
 fi
+export GOROOT=/usr/local/go
+export GOPATH=/home/ohermosa/go
