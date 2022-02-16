@@ -10,7 +10,7 @@ if [[ ( "$SHLVL" -eq 1 && ! -o LOGIN ) && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; t
   source "${ZDOTDIR:-$HOME}/.zprofile"
 fi
 
-export ANSIBLE_VAULT_PASSWORD_FILE=~/.vault_pass.txt
+export ANSIBLE_VAULT_PASSWORD_FILE=~/.vault_pass
 export WORKON_HOME=$HOME/python-venv
 
 if grep -i ubuntu /etc/os-release > /dev/null; then
