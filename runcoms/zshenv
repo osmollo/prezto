@@ -12,6 +12,10 @@ fi
 
 export ANSIBLE_VAULT_PASSWORD_FILE=~/.vault_pass
 export WORKON_HOME=$HOME/python-venv
+export XEUSER=XE67334
+export GITSTATUS_LOG_LEVEL=DEBUG
+export GOROOT=/usr/local/go
+export GOPATH=$HOME/go
 
 if grep -i ubuntu /etc/os-release > /dev/null; then
   source /usr/share/virtualenvwrapper/virtualenvwrapper.sh

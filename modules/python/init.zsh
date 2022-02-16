@@ -72,15 +72,16 @@ function _python-workon-cwd {
   if [[ -n $CD_VIRTUAL_ENV && "$ENV_NAME" != "$CD_VIRTUAL_ENV" ]]; then
     # We've just left the repo, deactivate the environment.
     # Note: this only happens if the virtualenv was activated automatically.
-    deactivate && unset CD_VIRTUAL_ENV
+    echo "\nDeactivating \"$(tput bold)$CD_VIRTUAL_ENV$(tput sgr0)\"" && deactivate && unset CD_VIRTUAL_ENV
   fi
+
   if [[ $ENV_NAME != "" ]]; then
     # Activate the environment only if it is not already active.
     if [[ "$VIRTUAL_ENV" != "$WORKON_HOME/$ENV_NAME" ]]; then
       if [[ -n "$WORKON_HOME" && -e "$WORKON_HOME/$ENV_NAME/bin/activate" ]]; then
-        workon "$ENV_NAME" && export CD_VIRTUAL_ENV="$ENV_NAME"
+         echo "\nActivating \"$(tput bold)$ENV_NAME$(tput sgr0)\"" && workon "$ENV_NAME" && export CD_VIRTUAL_ENV="$ENV_NAME" && cd $PROJECT_ROOT
       elif [[ -e "$ENV_NAME/bin/activate" ]]; then
-        source $ENV_NAME/bin/activate && export CD_VIRTUAL_ENV="$ENV_NAME"
+        echo "\nActivated \"$(tput bold)$ENV_NAME/bin/activate$(tput sgr0)\"" && source $ENV_NAME/bin/activate && export CD_VIRTUAL_ENV="$ENV_NAME" && cd $PROJECT_ROOT
       fi
     fi
   fi
