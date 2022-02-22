@@ -17,6 +17,13 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
+HISTFILE=~/Dropbox/backups/zsh/zsh_history
+HISTSIZE=50000
+SAVEHIST=50000
+setopt HIST_FIND_NO_DUPS
+setopt INC_APPEND_HISTORY
+setopt EXTENDED_HISTORY
+
 # Customize to your needs...
 source $HOME/.bash_aliases
 
